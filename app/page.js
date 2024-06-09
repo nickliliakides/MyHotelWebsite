@@ -15,7 +15,7 @@ const Page = () => {
       <div className='absolute left-0 top-0 w-screen h-screen bg-green-950 opacity-60' />
 
       <div className='relative z-10 text-center'>
-        <h1 className='text-8xl text-primary-50 mb-10 tracking-tight font-normal'>
+        <h1 className='text-4xl md:text-6xl xl:text-8xl text-primary-50 mb-10 tracking-tight font-normal'>
           Welcome to MyHotel.
         </h1>
         <Link
