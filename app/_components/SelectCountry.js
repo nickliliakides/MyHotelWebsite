@@ -1,8 +1,6 @@
 import { getCountries } from '@/app/_lib/data-service';
 
-// Let's imagine your colleague already built this component 😃
-
-async function SelectCountry({ defaultCountry, name, id, className }) {
+const SelectCountry = async ({ defaultCountry, name, id, className }) => {
   const countriesData = await getCountries();
 
   const countries = Object.values(countriesData).at(2);
@@ -26,6 +24,6 @@ async function SelectCountry({ defaultCountry, name, id, className }) {
       ))}
     </select>
   );
-}
+};
 
 export default SelectCountry;

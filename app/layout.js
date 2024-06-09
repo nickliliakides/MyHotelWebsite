@@ -1,4 +1,5 @@
 import { Josefin_Sans } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import '@/app/_styles/globals.css';
 import Header from './_components/Header';
 import { ReservationProvider } from './_context/ReservationContext';
@@ -16,7 +17,7 @@ export const metadata = {
   description: 'Luxurious and smart hotel located in the heart of London city.',
 };
 
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
       <body
@@ -27,8 +28,11 @@ export default function RootLayout({ children }) {
           <main className='max-w-7xl mx-auto w-full'>
             <ReservationProvider>{children}</ReservationProvider>
           </main>
+          <Analytics />
         </div>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

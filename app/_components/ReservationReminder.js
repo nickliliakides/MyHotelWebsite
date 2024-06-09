@@ -4,7 +4,7 @@ import { XMarkIcon } from '@heroicons/react/24/solid';
 import { format } from 'date-fns';
 import { useReservation } from '../_context/ReservationContext';
 
-function ReservationReminder() {
+const ReservationReminder = () => {
   // CHANGE
   const { range, resetRange } = useReservation();
 
@@ -25,6 +25,6 @@ function ReservationReminder() {
       </button>
     </div>
   );
-}
+};
 
 export default ReservationReminder;

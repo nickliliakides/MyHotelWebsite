@@ -7,7 +7,7 @@ export const metadata = {
   title: 'Update profile',
 };
 
-export default async function Page() {
+const Page = async () => {
   const session = await auth();
   const guest = await getGuest(session.user.email);
 
@@ -32,4 +32,5 @@ export default async function Page() {
       </ProfileUpdateForm>
     </div>
   );
-}
+};
+export default Page;

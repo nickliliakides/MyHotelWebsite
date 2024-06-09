@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 
-export default function Error({ error }) {
+const Error = ({ error }) => {
   const router = useRouter();
 
   return (
@@ -18,4 +18,6 @@ export default function Error({ error }) {
       </button>
     </main>
   );
-}
+};
+
+export default Error;

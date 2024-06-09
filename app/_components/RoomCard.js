@@ -2,7 +2,7 @@ import { UsersIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import Link from 'next/link';
 
-function RoomCard({ room }) {
+const RoomCard = ({ room }) => {
   const { id, name, maxCapacity, price, discount, image } = room;
 
   return (
@@ -55,6 +55,6 @@ function RoomCard({ room }) {
       </div>
     </div>
   );
-}
+};
 
 export default RoomCard;

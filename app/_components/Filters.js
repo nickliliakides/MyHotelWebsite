@@ -6,7 +6,7 @@ const Filters = () => {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const activeFilter = searchParams.get('capccity') ?? 'all';
+  const activeFilter = searchParams.get('capacity') ?? 'all';
 
   const handleFilter = (filter) => {
     const params = new URLSearchParams(searchParams);

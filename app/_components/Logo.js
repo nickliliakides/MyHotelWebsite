@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@/public/logo.png';
 
-function Logo() {
+const Logo = () => {
   return (
     <Link href='/' className='flex items-center gap-4 z-10 '>
       <Image
@@ -16,6 +16,6 @@ function Logo() {
       <span className='text-xl font-semibold text-primary-100'>MyHotel</span>
     </Link>
   );
-}
+};
 
 export default Logo;

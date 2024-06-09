@@ -9,16 +9,16 @@ export const formatDistanceFromNow = (dateStr) =>
     addSuffix: true,
   }).replace('about ', '');
 
-function ReservationCard({ booking, onDelete }) {
+const ReservationCard = ({ booking, onDelete }) => {
   const {
     id,
-    guestId,
+    // guestId,
     startDate,
     endDate,
     numNights,
     totalPrice,
     numGuests,
-    status,
+    // status,
     created_at,
     Rooms: { name, image },
   } = booking;
@@ -87,6 +87,6 @@ function ReservationCard({ booking, onDelete }) {
       </div>
     </div>
   );
-}
+};
 
 export default ReservationCard;

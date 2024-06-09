@@ -2,7 +2,7 @@ import SubmitButton from '@/app/_components/SubmitButton';
 import { updateReservation } from '@/app/_lib/actions';
 import { getBooking, getRoom } from '@/app/_lib/data-service';
 
-export default async function Page({ params }) {
+const Page = async ({ params }) => {
   const { bookingId } = params;
   const { numGuests, comments, roomId } = await getBooking(bookingId);
   const { maxCapacity } = await getRoom(roomId);
@@ -55,4 +55,6 @@ export default async function Page({ params }) {
       </form>
     </div>
   );
-}
+};
+
+export default Page;

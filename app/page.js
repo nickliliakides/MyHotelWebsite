@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import homeBg from '@/public/home.jpg';
 
-export default function Page() {
+const Page = () => {
   return (
     <main className='mt-24'>
       <Image
@@ -18,13 +18,14 @@ export default function Page() {
         <h1 className='text-8xl text-primary-50 mb-10 tracking-tight font-normal'>
           Welcome to myHotel.
         </h1>
-        <a
+        <Link
           href='/rooms'
-          className='bg-accent-500 px-8 py-6 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all'
+          className='bg-accent-500 px-8 py-6 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all rounded-md'
         >
           Book a room
-        </a>
+        </Link>
       </div>
     </main>
   );
-}
+};
+export default Page;

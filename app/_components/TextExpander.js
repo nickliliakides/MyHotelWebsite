@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 
-function TextExpander({ children }) {
+const TextExpander = ({ children }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const displayText = isExpanded
     ? children
@@ -18,6 +18,6 @@ function TextExpander({ children }) {
       </button>
     </span>
   );
-}
+};
 
 export default TextExpander;

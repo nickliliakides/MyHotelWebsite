@@ -5,7 +5,7 @@ import { useReservation } from '../_context/ReservationContext';
 import { createReservation } from '../_lib/actions';
 import SubmitButton from './SubmitButton';
 
-function ReservationForm({ room, user }) {
+const ReservationForm = ({ room, user }) => {
   // CHANGE
   const { maxCapacity, price, discount, id } = room;
   const { range, resetRange } = useReservation();
@@ -96,6 +96,6 @@ function ReservationForm({ room, user }) {
       </form>
     </div>
   );
-}
+};
 
 export default ReservationForm;

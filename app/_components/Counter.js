@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
-export default function Counter({ users }) {
+const Counter = ({ users }) => {
   const [count, setCount] = useState(0);
 
   return (
@@ -11,4 +11,6 @@ export default function Counter({ users }) {
       <button onClick={() => setCount((c) => c + 1)}>{count}</button>
     </div>
   );
-}
+};
+
+export default Counter;

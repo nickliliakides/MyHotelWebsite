@@ -53,18 +53,17 @@ export const getRooms = async function () {
 
 // Guests are uniquely identified by their email address
 export async function getGuest(email) {
-  const { data, error } = await supabase
-    .from('Guests')
-    .select('*')
-    .eq('email', email)
-    .single();
+  const {
+    data,
+    // error
+  } = await supabase.from('Guests').select('*').eq('email', email).single();
 
   // No error here! We handle the possibility of no guest in the sign in callback
   return data;
 }
 
 export async function getBooking(id) {
-  const { data, error, count } = await supabase
+  const { data, error } = await supabase
     .from('Bookings')
     .select('*')
     .eq('id', id)
@@ -79,7 +78,7 @@ export async function getBooking(id) {
 }
 
 export async function getBookings(guestId) {
-  const { data, error, count } = await supabase
+  const { data, error } = await supabase
     .from('Bookings')
     .select(
       'id, created_at, startDate, endDate, numNights, numGuests, totalPrice, guestId, roomId, Rooms(name, image)'
@@ -163,8 +162,7 @@ export async function createGuest(newGuest) {
 }
 
 export async function createBooking(newBooking) {
-  console.log('🚀 ~ createBooking ~ newBooking:', newBooking);
-  const { data, error } = await supabase.from('Bookings').insert([newBooking]);
+  const { error } = await supabase.from('Bookings').insert([newBooking]);
   // So that the newly created object gets returned!
   // .select()
   // .single();
@@ -182,7 +180,7 @@ export async function createBooking(newBooking) {
 
 // The updatedFields is an object which should ONLY contain the updated data
 export async function updateGuest(id, updatedFields) {
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from('Guests')
     .update(updatedFields)
     .eq('id', id);
@@ -195,7 +193,7 @@ export async function updateGuest(id, updatedFields) {
 }
 
 export async function updateBooking(id, updatedFields) {
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from('Bookings')
     .update(updatedFields)
     .eq('id', id)
@@ -215,7 +213,7 @@ export async function updateBooking(id, updatedFields) {
 // DELETE
 
 export async function deleteBooking(id) {
-  const { data, error } = await supabase.from('Bookings').delete().eq('id', id);
+  const { error } = await supabase.from('Bookings').delete().eq('id', id);
 
   if (error) {
     console.error(error);

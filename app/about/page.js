@@ -1,8 +1,9 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import Image1 from '@/public/about-5.jpg';
 import Image2 from '@/public/about-6.jpg';
-import Image from 'next/image';
 
-export default function Page() {
+const Page = () => {
   return (
     <div className='grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center'>
       <div className='col-span-3'>
@@ -72,15 +73,17 @@ export default function Page() {
           </p>
 
           <div>
-            <a
+            <Link
               href='/rooms'
-              className='inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all'
+              className='inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all rounded-md'
             >
               Explore our luxury studios
-            </a>
+            </Link>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Page;

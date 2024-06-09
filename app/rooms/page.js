@@ -10,7 +10,7 @@ export const metadata = {
   title: 'Rooms',
 };
 
-export default function Page({ searchParams }) {
+const Page = ({ searchParams }) => {
   const filter = searchParams?.capacity ?? 'all';
 
   return (
@@ -34,4 +34,6 @@ export default function Page({ searchParams }) {
       </Suspense>
     </div>
   );
-}
+};
+
+export default Page;

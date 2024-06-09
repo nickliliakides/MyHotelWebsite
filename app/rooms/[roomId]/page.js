@@ -5,19 +5,18 @@ import { getRoom, getRooms } from '@/app/_lib/data-service';
 
 import { Suspense } from 'react';
 
-export async function generateMetadata({ params }) {
+export const generateMetadata = async ({ params }) => {
   const { name } = await getRoom(params.roomId);
   return { title: `Room ${name}` };
-}
+};
 
-export async function generateStaticParams() {
+export const generateStaticParams = async () => {
   const rooms = await getRooms();
   const ids = rooms.map((room) => ({ roomId: String(room.id) }));
-
   return ids;
-}
+};
 
-export default async function Page({ params }) {
+const Page = async ({ params }) => {
   const room = await getRoom(params.roomId);
 
   return (
@@ -33,4 +32,6 @@ export default async function Page({ params }) {
       </div>
     </div>
   );
-}
+};
+
+export default Page;

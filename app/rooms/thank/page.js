@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function Page() {
+const Page = () => {
   return (
     <div className='text-center space-y-6 mt-4'>
       <h1 className='text-3xl font-semibold'>
@@ -15,3 +15,5 @@ export default function Page() {
     </div>
   );
 }
+
+export default  Page

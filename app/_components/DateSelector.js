@@ -9,7 +9,7 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { useReservation } from '../_context/ReservationContext';
 
-function isAlreadyBooked(range, datesArr) {
+const isAlreadyBooked = (range, datesArr) => {
   return (
     range?.from &&
     range?.to &&
@@ -17,9 +17,9 @@ function isAlreadyBooked(range, datesArr) {
       isWithinInterval(date, { start: range.from, end: range.to })
     )
   );
-}
+};
 
-function DateSelector({ settings, bookedDates, room }) {
+const DateSelector = ({ settings, bookedDates, room }) => {
   const { range, setRange, resetRange } = useReservation();
 
   // SETTINGS
@@ -89,6 +89,6 @@ function DateSelector({ settings, bookedDates, room }) {
       </div>
     </div>
   );
-}
+};
 
 export default DateSelector;
