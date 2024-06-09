@@ -20,7 +20,7 @@ const Page = () => {
         </h1>
         <Link
           href='/rooms'
-          className='bg-accent-500 px-8 py-6 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all rounded-md'
+          className='bg-accent-500 px-8 py-6 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all rounded-md opacity-85'
         >
           Book a room
         </Link>
