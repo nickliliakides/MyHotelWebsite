@@ -9,7 +9,7 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { useReservation } from '../_context/ReservationContext';
 
-const isAlreadyBooked = (range, datesArr) => {
+export const isAlreadyBooked = (range, datesArr) => {
   return (
     range?.from &&
     range?.to &&
@@ -48,7 +48,7 @@ const DateSelector = ({ settings, bookedDates, room }) => {
         }
       />
 
-      <div className='flex items-center justify-between px-8 bg-accent-500 text-primary-800 h-[72px]'>
+      <div className='price-display flex items-center justify-between px-8 bg-accent-500 text-primary-800 h-[72px]'>
         <div className='flex items-center gap-6'>
           <p className='flex gap-2 items-baseline'>
             {discount > 0 ? (

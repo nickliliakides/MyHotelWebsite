@@ -12,6 +12,7 @@ const createJestConfig = nextJest({
 
 /** @type {import('jest').Config} */
 const config = {
+  testRegex: '\\.test\\.[jt]sx?$',
   // setupFiles: ["<rootDir>/setup-tests.js"],
   // All imported modules in your tests should be mocked automatically
   // automock: false,
