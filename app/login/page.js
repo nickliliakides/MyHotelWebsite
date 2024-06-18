@@ -6,7 +6,10 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <div className='flex flex-col gap-10 mt-10 items-center'>
+    <div
+      className='flex flex-col gap-10 mt-10 items-center'
+      data-testid='Google'
+    >
       <h2 className='text-3xl font-semibold'>
         Sign in to access your guest area
       </h2>

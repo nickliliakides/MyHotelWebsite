@@ -221,3 +221,13 @@ export async function deleteBooking(id) {
   }
   revalidatePath('/account/reservations');
 }
+
+export async function createContact(contactData) {
+  const { error } = await supabase.from('Contact').insert([contactData]);
+
+  if (error) {
+    console.error(error);
+    throw new Error('Message could not be sent, please try again later.');
+  }
+  redirect('/contact/success');
+}

@@ -4,6 +4,7 @@ import { isWithinInterval } from 'date-fns';
 import { signIn, signOut, auth } from './auth';
 import {
   createBooking,
+  createContact,
   deleteBooking,
   getBookedDatesByRoomId,
   getBookings,
@@ -97,4 +98,18 @@ export const createReservation = async (bookingData, formData) => {
   };
 
   await createBooking(reservation);
+};
+
+export const sendNewContact = async (contactFormData) => {
+  const fullName = contactFormData.get('fullName').trim();
+  const email = contactFormData.get('email').trim();
+  const subject = contactFormData.get('subject').trim();
+  const message = contactFormData.get('message').slice(0, 1000).trim();
+  if (!fullName) throw new Error('Fullname cannot be empty');
+  if (!/^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/.test(email))
+    throw new Error('Please provide a valid email address');
+  if (!subject) throw new Error('Subject cannot be empty');
+  if (!message) throw new Error('Message cannot be empty');
+
+  await createContact({ fullName, email, subject, message });
 };

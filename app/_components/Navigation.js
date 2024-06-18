@@ -25,6 +25,14 @@ const Navigation = async () => {
           </Link>
         </li>
         <li>
+          <Link
+            href='/contact'
+            className='hover:text-accent-400 transition-colors'
+          >
+            Contact
+          </Link>
+        </li>
+        <li>
           {session?.user?.image ? (
             <Link
               href='/account'
