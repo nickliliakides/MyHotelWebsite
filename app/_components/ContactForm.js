@@ -7,7 +7,8 @@ const ContactForm = () => {
   return (
     <form
       action={sendNewContact}
-      className=' bg-primary-900 py-10 px-14 text-lg space-y-6 '
+      className='bg-primary-900 py-10 px-14 text-lg space-y-6'
+      data-cy='contact-form'
     >
       <div className='space-y-2'>
         <label>Full name</label>

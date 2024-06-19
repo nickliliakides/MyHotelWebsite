@@ -1,5 +1,10 @@
 {
-  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:cypress/recommended"
+  ],
   "rules": {
     "no-unused-vars": "warn",
     "no-undef": "warn"

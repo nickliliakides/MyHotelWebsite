@@ -30,7 +30,10 @@ const SideNavigation = () => {
   const pathname = usePathname();
 
   return (
-    <nav className='fixed w-[16rem] border-r border-primary-900 h-[calc(100vh_-_156px)]'>
+    <nav
+      className='fixed w-[16rem] border-r border-primary-900 h-[calc(100vh_-_156px)]'
+      data-cy='account-navigation'
+    >
       <ul className='flex flex-col gap-2 h-full text-lg'>
         {navLinks.map((link) => (
           <li key={link.name}>

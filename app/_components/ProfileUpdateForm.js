@@ -9,6 +9,7 @@ const ProfileUpdateForm = ({ children, guest }) => {
     <form
       action={updateGuestProfile}
       className='bg-primary-900 py-8 px-12 text-lg flex gap-6 flex-col'
+      data-cy='account-profile-form'
     >
       <div className='space-y-2'>
         <label>Full name</label>

@@ -15,7 +15,7 @@ const Filters = () => {
   };
 
   return (
-    <div className='flex border border-primary-800'>
+    <div className='flex border border-primary-800' data-cy='room-filters'>
       <Button
         filter='all'
         handleFilter={handleFilter}

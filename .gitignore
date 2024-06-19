@@ -1,4 +1,5 @@
 node_modules
+cypress.env.*
 .next
 .env.local
 .env.test.local
